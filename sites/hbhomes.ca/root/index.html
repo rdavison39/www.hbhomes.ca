@@ -24,8 +24,8 @@
 
 <p>Serving Huntsville • Bracebridge • Lake of Bays • Gravenhurst</p>
 
-<p style="font-size:20px; font-weight:bold; margin-top:15px;">
-<a href="tel:9054642014" style="text-decoration:none;">
+<p class="hero-call" style="font-size:20px; font-weight:bold; margin-top:15px;">
+<a href="tel:9054642014">
 Call or text 905-464-2014 for a quick quote
 </a>
 </p>
@@ -39,7 +39,7 @@ Call or text 905-464-2014 for a quick quote
 <h2>Reliable Excavation for Muskoka Properties</h2>
 
 <p>
-Hammel Bay Homes provides excavation and precision rock blasting services across Muskoka. Based in Utterson, we specialize in cottage and residential properties where access, terrain and rock conditions require careful, controlled work.
+Hammel Bay Homes provides excavation and precision rock blasting services across Muskoka. Based in Utterson, we specialize in cottage and residential properties where access, terrain and rock conditions require controlled work.
 </p>
 
 <p>
@@ -48,7 +48,7 @@ Our equipment and NxBurst technology allow us to efficiently complete trenching,
 
 </div>
 
-<!-- CTA SECTION -->
+<!-- CTA -->
 
 <div class="container" style="text-align:center;">
 
@@ -101,29 +101,20 @@ Our equipment and NxBurst technology allow us to efficiently complete trenching,
 
 </div>
 
+<!-- 🔥 NEW INTERNAL LINKING SECTION -->
+
 <div class="container">
 
-<h2>Recent Work</h2>
+<h2>Rock Blasting Services in Muskoka</h2>
 
-<div class="services">
-
-<div class="service">
-<img src="/images/lot clearing.1.jpg" style="width:100%;">
-</div>
-
-<div class="service">
-<img src="/images/stepping stones.1.jpg" style="width:100%;">
-</div>
-
-<div class="service">
-<img src="/images/20221004_144439.jpg" style="width:100%;">
-</div>
-
-</div>
-
-<p style="margin-top:20px;">
-<a class="button" href="/gallery/index.html">View More Photos</a>
+<p>
+We provide controlled rock blasting services across Muskoka, including:
 </p>
+
+<ul>
+<li><a href="/blasting-huntsville/index.html">Rock Blasting Huntsville</a></li>
+<li><a href="/blasting-bracebridge/index.html">Rock Blasting Bracebridge</a></li>
+</ul>
 
 </div>
 
@@ -132,10 +123,23 @@ Our equipment and NxBurst technology allow us to efficiently complete trenching,
 <h2>Muskoka Service Areas</h2>
 
 <ul>
-<li><a href="/excavation-huntsville/index.html">Excavation Huntsville</a></li>
-<li><a href="/excavation-bracebridge/index.html">Excavation Bracebridge</a></li>
-<li><a href="/excavation-lake-of-bays/index.html">Excavation Lake of Bays</a></li>
-<li><a href="/excavation-gravenhurst/index.html">Excavation Gravenhurst</a></li>
+<li>
+<a href="/excavation-huntsville/index.html">Excavation Huntsville</a> |
+<a href="/blasting-huntsville/index.html">Rock Blasting Huntsville</a>
+</li>
+
+<li>
+<a href="/excavation-bracebridge/index.html">Excavation Bracebridge</a> |
+<a href="/blasting-bracebridge/index.html">Rock Blasting Bracebridge</a>
+</li>
+
+<li>
+<a href="/excavation-lake-of-bays/index.html">Excavation Lake of Bays</a>
+</li>
+
+<li>
+<a href="/excavation-gravenhurst/index.html">Excavation Gravenhurst</a>
+</li>
 </ul>
 
 </div>
@@ -143,13 +147,23 @@ Our equipment and NxBurst technology allow us to efficiently complete trenching,
 <div id="footer"></div>
 
 <script>
-fetch('/includes/header.html')
-  .then(res => res.text())
-  .then(data => document.getElementById('header').innerHTML = data);
+document.addEventListener("DOMContentLoaded", function() {
 
-fetch('/includes/footer.html')
-  .then(res => res.text())
-  .then(data => document.getElementById('footer').innerHTML = data);
+  fetch('/includes/header.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+    })
+    .catch(err => console.error('Header load error:', err));
+
+  fetch('/includes/footer.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    })
+    .catch(err => console.error('Footer load error:', err));
+
+});
 </script>
 
 </body>

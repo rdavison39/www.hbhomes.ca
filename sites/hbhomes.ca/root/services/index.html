@@ -42,12 +42,12 @@ Call or text 905-464-2014 for a quick quote
 
 <div class="service">
 <h3>Mini Excavation</h3>
-<p>Trenching, drainage, culverts and general excavation for residential and cottage properties.</p>
+<p>Trenching, drainage, culverts and general excavation.</p>
 </div>
 
 <div class="service">
 <h3>Rock Blasting (NxBurst)</h3>
-<p>Safe, controlled rock breaking without traditional blasting risks. Ideal for tight spaces and near structures.</p>
+<p>Safe, controlled rock breaking without traditional blasting risks.</p>
 </div>
 
 <div class="service">
@@ -57,7 +57,7 @@ Call or text 905-464-2014 for a quick quote
 
 <div class="service">
 <h3>Driveway & Access Preparation</h3>
-<p>Driveway excavation and grading for Muskoka terrain.</p>
+<p>Driveways and access roads built for Muskoka terrain.</p>
 </div>
 
 <div class="service">
@@ -67,26 +67,27 @@ Call or text 905-464-2014 for a quick quote
 
 <div class="service">
 <h3>Stump Removal</h3>
-<p>Clearing and preparing your property for construction.</p>
+<p>Clearing and preparing your property.</p>
 </div>
 
 </div>
 
 </div>
 
-<!-- ROCK BLASTING FEATURE -->
+<!-- 🔥 ROCK BLASTING SECTION -->
 
 <div class="container">
 
-<h2>Rock Blasting Without the Risk</h2>
+<h2>Rock Blasting Services in Muskoka</h2>
 
 <p>
-Traditional blasting isn’t always practical for cottage properties. Our NxBurst system allows controlled rock breaking with minimal vibration and no fly rock.
+We provide controlled rock breaking using NxBurst technology across:
 </p>
 
-<p>
-This makes it ideal for working near structures and in tight access areas common across Muskoka.
-</p>
+<ul>
+<li><a href="/blasting-huntsville/index.html">Rock Blasting Huntsville</a></li>
+<li><a href="/blasting-bracebridge/index.html">Rock Blasting Bracebridge</a></li>
+</ul>
 
 <p>
 <a class="button" href="/blasting/index.html">Learn More About Rock Blasting</a>
@@ -110,13 +111,23 @@ This makes it ideal for working near structures and in tight access areas common
 <div id="footer"></div>
 
 <script>
-fetch('/includes/header.html')
-  .then(res => res.text())
-  .then(data => document.getElementById('header').innerHTML = data);
+document.addEventListener("DOMContentLoaded", function() {
 
-fetch('/includes/footer.html')
-  .then(res => res.text())
-  .then(data => document.getElementById('footer').innerHTML = data);
+  fetch('/includes/header.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+    })
+    .catch(err => console.error('Header load error:', err));
+
+  fetch('/includes/footer.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    })
+    .catch(err => console.error('Footer load error:', err));
+
+});
 </script>
 
 </body>

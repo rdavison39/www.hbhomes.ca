@@ -8,8 +8,6 @@
 
 <meta name="description" content="Gallery of excavation and rock blasting projects across Muskoka including trenching, drainage, driveways and rock removal.">
 
-<meta name="robots" content="index, follow">
-
 <link rel="stylesheet" href="/css/style.css">
 
 </head>
@@ -41,20 +39,20 @@
 </div>
 
 <div class="thumbnails">
-<img src="/images/gallery1.jpg" onclick="setImage(this)">
+<img src="/images/gallery1.jpg" class="active" onclick="setImage(this)">
 <img src="/images/gallery2.jpg" onclick="setImage(this)">
 <img src="/images/gallery3.jpg" onclick="setImage(this)">
 <img src="/images/gallery4.jpg" onclick="setImage(this)">
 <img src="/images/gallery5.jpg" onclick="setImage(this)">
-<img src="/images/gallery6.jpg" onclick="setImage(this)">
 <img src="/images/gallery7.jpg" onclick="setImage(this)">
 <img src="/images/gallery8.jpg" onclick="setImage(this)">
 <img src="/images/gallery9.jpg" onclick="setImage(this)">
 <img src="/images/gallery10.jpg" onclick="setImage(this)">
 <img src="/images/gallery11.jpg" onclick="setImage(this)">
-<img src="/images/gallery12.jpg" onclick="setImage(this)">
 <img src="/images/gallery13.jpg" onclick="setImage(this)">
+<img src="/images/gallery12.jpg" onclick="setImage(this)">
 <img src="/images/gallery14.jpg" onclick="setImage(this)">
+<img src="/images/gallery6.jpg" onclick="setImage(this)">
 </div>
 
 </div>
@@ -63,17 +61,29 @@
 
 <div id="footer"></div>
 
+<!-- HEADER / FOOTER LOAD -->
 <script>
-fetch('/includes/header.html')
-  .then(res => res.text())
-  .then(data => document.getElementById('header').innerHTML = data);
+document.addEventListener("DOMContentLoaded", function() {
 
-fetch('/includes/footer.html')
-  .then(res => res.text())
-  .then(data => document.getElementById('footer').innerHTML = data);
+  fetch('/includes/header.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('header').innerHTML = data);
 
-function setImage(img) {
-  document.getElementById("currentImage").src = img.src;
+  fetch('/includes/footer.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('footer').innerHTML = data);
+
+});
+</script>
+
+<!-- 🔥 GALLERY FUNCTION (THIS WAS MISSING) -->
+<script>
+function setImage(img){
+  const main = document.getElementById("currentImage");
+  main.src = img.src;
+
+  document.querySelectorAll('.thumbnails img').forEach(i => i.classList.remove('active'));
+  img.classList.add('active');
 }
 </script>
 

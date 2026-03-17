@@ -64,11 +64,28 @@ text-decoration:underline;
 }
 
 /* =========================
+NAV HIGHLIGHT (FIXED LOCATION)
+========================= */
+
+nav a.nav-highlight{
+background:#e6b800;
+color:black !important;
+padding:6px 14px;
+border-radius:20px;
+}
+
+nav a.nav-highlight:hover{
+background:#d4a700;
+color:black !important;
+text-decoration:none;
+}
+
+/* =========================
 HERO SECTION
 ========================= */
 
 .hero{
-background:url("../images/excavator-hero.jpg") center center / cover no-repeat;
+background:url("/images/excavator-hero.jpg") center center / cover no-repeat;
 color:white;
 text-align:center;
 padding:90px 20px;
@@ -103,6 +120,21 @@ margin:5px 0;
 }
 
 /* =========================
+HERO CALL (PHONE NUMBER)
+========================= */
+
+.hero-call a{
+color:#FFD700 !important;
+text-decoration:none;
+text-shadow:1px 1px 3px rgba(0,0,0,0.7);
+font-weight:bold;
+}
+
+.hero-call a:hover{
+color:#ffcc00 !important;
+}
+
+/* =========================
 BUTTONS
 ========================= */
 
@@ -119,7 +151,7 @@ box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
 .button:hover{
-  background:#d4a700;
+background:#d4a700;
 }
 
 /* =========================
@@ -199,39 +231,6 @@ margin:6px 0;
 }
 
 /* =========================
-MOBILE
-========================= */
-
-@media (max-width:700px){
-
-header{
-flex-direction:column;
-align-items:flex-start;
-}
-
-nav{
-margin-top:10px;
-}
-
-nav a{
-margin-left:0;
-margin-right:15px;
-display:inline-block;
-margin-top:5px;
-}
-
-.hero h2{
-font-size:28px;
-}
-
-.logo img{
-transform:scale(1.2);
-height:70px;
-}
-
-}
-
-/* =========================
 CONTACT FORM
 ========================= */
 
@@ -272,7 +271,9 @@ cursor:pointer;
 transition:background 0.2s;
 }
 
-form button:hover
+form button:hover{
+background:#163020;
+}
 
 /* =========================
 CONTACT PAGE LAYOUT
@@ -286,11 +287,9 @@ align-items:start;
 }
 
 @media (max-width:800px){
-
 .contact-grid{
 grid-template-columns:1fr;
 }
-
 }
 
 .contact-card{
@@ -333,23 +332,30 @@ padding:10px 16px;
 border-radius:5px;
 }
 
-.sticky-quote a:hover
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
+.sticky-quote a:hover{
+background:#d4a700;
 }
 
-.gallery img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 8px;
-}
 /* =========================
-NEW GALLERY (THUMBNAIL STYLE)
+GALLERY
+========================= */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+margin-top:20px;
+}
+
+.gallery img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:8px;
+}
+
+/* =========================
+THUMBNAIL GALLERY
 ========================= */
 
 .gallery-wrapper{
@@ -385,13 +391,53 @@ transition:0.3s;
 opacity:1;
 transform:scale(1.05);
 }
+/* =========================
+THUMBNAIL ACTIVE STATE (ADDED)
+========================= */
+
+.thumbnails img.active{
+opacity:1;
+border:3px solid #e6b800;
+}
+
+/* =========================
+MOBILE
+========================= */
 
 @media (max-width:700px){
+
+header{
+flex-direction:column;
+align-items:flex-start;
+}
+
+nav{
+margin-top:10px;
+}
+
+nav a{
+margin-left:0;
+margin-right:15px;
+display:inline-block;
+margin-top:5px;
+}
+
+.hero h2{
+font-size:28px;
+}
+
+.logo img{
+transform:scale(1.2);
+height:70px;
+}
+
 .main-image img{
 height:300px;
 }
+
 .thumbnails img{
 width:80px;
 height:60px;
 }
+
 }
