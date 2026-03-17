@@ -118,7 +118,9 @@ border-radius:6px;
 box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
-.button:hover
+.button:hover{
+  background:#d4a700;
+}
 
 /* =========================
 PAGE CONTAINERS
@@ -345,4 +347,51 @@ border-radius:5px;
   height: 220px;
   object-fit: cover;
   border-radius: 8px;
+}
+/* =========================
+NEW GALLERY (THUMBNAIL STYLE)
+========================= */
+
+.gallery-wrapper{
+max-width:900px;
+margin:auto;
+}
+
+.main-image img{
+width:100%;
+height:500px;
+object-fit:cover;
+border-radius:8px;
+}
+
+.thumbnails{
+display:flex;
+gap:10px;
+margin-top:15px;
+overflow-x:auto;
+}
+
+.thumbnails img{
+width:100px;
+height:70px;
+object-fit:cover;
+border-radius:6px;
+cursor:pointer;
+opacity:0.7;
+transition:0.3s;
+}
+
+.thumbnails img:hover{
+opacity:1;
+transform:scale(1.05);
+}
+
+@media (max-width:700px){
+.main-image img{
+height:300px;
+}
+.thumbnails img{
+width:80px;
+height:60px;
+}
 }
