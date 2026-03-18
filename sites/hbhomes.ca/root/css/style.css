@@ -401,31 +401,31 @@ align-items:center;
 justify-content:space-between;
 }
 
-/* hamburger visible */
+/* show hamburger */
 .menu-toggle{
 display:block;
 }
 
-/* 🔥 hide nav properly */
-#nav-menu{
-display:none;
+/* 🔥 FORCE hide nav */
+nav{
+display:none !important;
+}
+
+/* show menu when active */
+nav.active{
+display:flex !important;
+flex-direction:column;
+width:100%;
+background:#1f3d2b;
 position:absolute;
 top:100%;
 left:0;
-width:100%;
-background:#1f3d2b;
-flex-direction:column;
 padding:15px;
 z-index:999;
 }
 
-/* show menu */
-#nav-menu.active{
-display:flex;
-}
-
-/* links */
-#nav-menu a{
+/* menu items */
+nav a{
 margin:10px 0;
 font-size:16px;
 }
@@ -435,7 +435,7 @@ font-size:16px;
 display:block;
 }
 
-/* hide top phone (cleaner mobile) */
+/* hide top phone */
 .header-phone{
 display:none;
 }
